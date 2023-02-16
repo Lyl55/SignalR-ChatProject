@@ -1,0 +1,125 @@
+﻿<input type="hidden" id="hdId" />
+<input type="hidden" id="hdUserName" />
+<br />
+<div id="privateChat"></div>
+
+
+
+<div class="row" background="~/Content/wallpaper4.png">
+    <div id="divChat" class="panel panel-default" >
+        <div class="panel-heading">
+            <div id="time">
+                <h5> <b id="clock"></b></h5>
+                <h6>@DateTime.Now.ToString("dd/MM/yyyy")</h6>
+            </div>
+            <h3> Welcome  &nbsp;<b><span id="spanUser"></span></b> !</h3>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-sm-9">
+                <div id="divChatWindow"></div>
+            </div>
+
+            <div class="col-sm-3">
+                <h6><b>Online Members (<strong id="onlineMember"></strong>) </b></h6> <hr />
+                <div id="divusers"></div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <form class="form-inline">
+                <textarea id="txtMessage" class="form-control" placeholder="Enter your message..."></textarea>
+                <button id="btnSendMsg" class="btn btn-success">Send</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#historyModal">View History</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Chat History -->
+    <div id="historyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chat History</h4>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-1">From</label>
+                            <input class="col-md-4" type="date" id="dateFrom" />
+                            <div class="form-group">
+                                <label class="col-sm-1">To</label>
+                                <input class="col-md-4" type="date" id="dateTo" />
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">Isim</label>
+                                <input class="col-ms-offset-3" type="text" id="inputName" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body" id="chatHistory" style="float: left; width: 100%; height: 200px;overflow-y: scroll;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="btnGetHistory" class="btn btn-primary col-sm-offset-4"> Show</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Chat History-->
+
+
+</div>
+
+
+<!-- Private Message -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="userprivate"></h4>
+            </div>
+
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div id="divusers"></div>
+                    <input type="text" id="privateTxt" class="form-control" placeholder="Enter your message..." />
+                    <button id="privateSent" class="btn btn-success">Send</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/App/chatJS.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/App/notificationJS.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.0.2/dist/loadingoverlay.min.js"></script>
+
+    <script>
+                //$(document).ready(function() {
+
+                //    $.LoadingOverlay("show");
+
+                //    setTimeout(function(){
+                //        $.LoadingOverlay("hide");
+                //    }, 2000);
+                //});
+    </script>
+}

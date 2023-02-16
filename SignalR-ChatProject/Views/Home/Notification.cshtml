@@ -1,0 +1,23 @@
+﻿
+<div class="row form-inline">
+    <div class="panel panel-default" id="notiWindow">
+        <textarea id="txtMessage" class="form-control" placeholder="Duyurunuzu yaziniz..."></textarea>
+        <button id="btnSend" class="btn btn-primary">Send</button>
+    </div>
+</div>
+
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-sm-12" id="notificationPanel">
+
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="~/signalr/hubs"></script>
+    <script src="~/App/notificationJS.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+}

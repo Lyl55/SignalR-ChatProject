@@ -1,0 +1,46 @@
+﻿#time {
+    float: right;
+}
+
+#divChatWindow {
+    overflow-y: scroll;
+    height: 300px;
+
+}
+
+#divusers {
+    height: 200px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.loginUser .userName {
+    font-weight: bold;
+    color: brown;
+}
+
+.loginUserName {
+
+    font-weight: bold;
+    color: forestgreen;
+}
+
+#divChat{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#notificationPanel {
+    height: 500px;
+    width: 900px;
+    overflow-y: scroll;
+    display: block;
+}
+
+#notiWindow {
+    margin-top: 10px;
+    margin: auto;
+    width: 70%;
+    width: 350px;
+}
